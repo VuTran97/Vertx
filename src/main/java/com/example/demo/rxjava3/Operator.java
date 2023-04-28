@@ -1,8 +1,10 @@
 package com.example.demo.rxjava3;
 
 
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
+
+import io.reactivex.Observable;
+import io.reactivex.schedulers.Schedulers;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -247,7 +249,6 @@ public class Operator {
     System.out.println("---------onErrorResumeWith------------");
     Observable.just(2,1,0)
         .map(item -> 2/item)
-        .onErrorResumeWith(Observable.just(2,1,0))
         .subscribe(item -> {
           System.out.println(item);
         });
@@ -255,8 +256,8 @@ public class Operator {
 
   }
   public static void main(String[] args) throws InterruptedException {
-    //filterCondition();
+    filterCondition();
     //transformAndCombine();
-    utilityAndErrorHandling();
+    //utilityAndErrorHandling();
   }
 }
